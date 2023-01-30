@@ -7,7 +7,7 @@ provider "google" {
 
 variable "nome" {
   type = string
-  default = first
+  default = primeiro
 }
 
 # VPC
