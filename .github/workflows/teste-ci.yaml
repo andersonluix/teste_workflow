@@ -2,11 +2,8 @@ name: Workflow
 
 on:
   push:
-    paths:
-      - 'IaC/**'
-  push:
-    paths:
-      - 'frontend/**'
+    branches:
+       - 'main'
   workflow_dispatch:
 
 jobs:
