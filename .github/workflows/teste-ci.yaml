@@ -1,4 +1,4 @@
-name: Workflow
+name: WorkflowFrontend
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
         description: 'Terraform Action to Perform'
         type: choice
         options:
-        - Terraform_apply
+                #        - Terraform_apply
         - Terraform_destroy
 
 jobs:
