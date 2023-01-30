@@ -3,14 +3,14 @@ name: Workflow
 on:
   push:
     paths:
-      - first.tf
+      - 'IaC/**'
   push:
     paths:
-      - second.tf
+      - 'frontend/**'
   push:
     paths:
-      - '!first.tf'
-      - '!second.tf'
+      - '!IaC/**'
+      - '!frontend/**'
 
 jobs:
   build:
