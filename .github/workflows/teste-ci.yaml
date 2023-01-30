@@ -2,8 +2,8 @@ name: Workflow
 
 on:
   push:
-          #  branches:
-          #$ - 'main'
+    branches:
+     - 'main'
   workflow_dispatch:
     inputs:
       action:
@@ -27,6 +27,7 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     # if: github.event.ref == 'refs/heads/main' && github.event_path == 'frontend/**'
+    if: ${{ github.event_path == 'frontend/**' }}
 
     steps:
       - name: Print Terraform
