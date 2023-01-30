@@ -1,0 +1,36 @@
+name: Workflow
+
+on:
+  push:
+    paths:
+      - first.tf
+  push:
+    paths:
+      - second.tf
+  push:
+    paths:
+      - '!first.tf'
+      - '!second.tf'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Build
+        run: echo "Build"
+
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Terraform
+        run: echo "Terraform"
+
+  manual:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'manual'
+
+    steps:
+      - name: Print Manual
+        run: echo "Manual"
