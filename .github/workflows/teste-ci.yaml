@@ -4,6 +4,9 @@ on:
   push:
     branches:
      - 'main'
+    paths:
+      - 'frontend/**'
+      - 'IaC/**'
   workflow_dispatch:
     inputs:
       action:
@@ -16,7 +19,7 @@ on:
 jobs:
   build:
     name: "Terraform_apply"
-    if: ${{ github.event.inputs.action == 'Terraform_apply' }}
+    #if: ${{ github.event.inputs.action == 'Terraform_apply' }}
     runs-on: ubuntu-latest
     #    if: github.event.ref == 'refs/heads/main' && github.event_path == 'IaC/**'
 
