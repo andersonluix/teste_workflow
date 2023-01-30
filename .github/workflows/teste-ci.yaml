@@ -19,13 +19,13 @@ on:
 jobs:
   build:
     name: "Terraform_apply"
-    #if: ${{ github.event.inputs.action == 'Terraform_apply' }}
+    if: ${{ github.event.inputs.action != 'Terraform_destroy' }}
     runs-on: ubuntu-latest
     #    if: github.event.ref == 'refs/heads/main' && github.event_path == 'IaC/**'
 
     steps:
       - name: Print Build
-        run: echo "Build"
+        run: echo "mudou o frontend"
 
   terraform:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Print Terraform
-        run: echo "Terraform"
+        run: echo "if do frontend"
 
   manual:
     name: "Terraform_destroy"
@@ -44,4 +44,4 @@ jobs:
 
     steps:
       - name: Print Manual
-        run: echo "Manual"
+        run: echo "distruiu o frontend"
