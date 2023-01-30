@@ -6,7 +6,7 @@ on:
      - 'main'
     paths:
             #- 'frontend/**'
-      - 'IaC/**'
+      - 'IaC/**.tf'
   workflow_dispatch:
     inputs:
       action:
