@@ -12,7 +12,7 @@ variable "nome" {
 
 # VPC
 resource "google_compute_network" "vpc2" {
-  name                    =  var.nome    #${{ env.VPCNAME }}
+  name                    =  var.nome    
   auto_create_subnetworks = "false"
 }
 
